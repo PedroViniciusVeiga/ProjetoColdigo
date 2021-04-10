@@ -1,0 +1,11 @@
+//org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+//org.eclipse.ui.commands/state/org.eclipse.wst.xml.views.XPathView.processor.xpathprocessor/org.eclipse.ui.commands.radioState=xpath10
+ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.jdt.ui.presentation\tTorg.eclipse.compare.contentmergeviewer.TextMergeViewer\tTorg.eclipse.mylyn.wikitext.ui.presentation
+ColorsAndFontsPreferencePage.selectedElement=CEDITION_COLOR
+PLUGINS_NOT_ACTIVATED_ON_STARTUP=;org.eclipse.m2e.discovery;
+eclipse.preferences.version=1
+org.eclipse.ui.ide.systemDefault.EDITION_COLOR=255,255,255
+org.eclipse.ui.ide.systemDefault.org.eclipse.jdt.ui.Javadoc.backgroundColor=255,0,255
+org.eclipse.ui.ide.systemDefault.org.eclipse.jdt.ui.Javadoc.foregroundColor=255,0,0
+org.eclipse.ui.ide.systemDefault.terminal.views.view.font.definition=1|Consolas|9.75|0|WINDOWS|1|-13|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
+terminal.views.view.font.definition=1|Consolas|9.75|0|WINDOWS|1|-13|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;

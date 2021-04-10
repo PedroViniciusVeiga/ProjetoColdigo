@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registro de Contatos</title>
+<link rel="stylesheet" type="text/css" href="siteContato.css">
+
+</head>
+<body>
+<script type="text/javascript">
+function validaContatos(){
+	var nome = document.dadosdecontato.nome.value;// receber o valor do campo txtnome em uma variável
+	var expRegNome = new RegExp("^[A-zÀ-ü]{3,}([ ]{1}[A-zÀ-ü]{2,})+$");//Criado um objeto RegExp e atribuido a variável expRegNome
+	
+if(!expRegNome.test(nome)){
+	alert("Preencha o campo Nome corretamente. ");
+		document.dadosdecontato.nome.focus();/*motivo de após o "ok" ir direto ao input do Nome, devido ao focus*/
+		return false;/*impede o envio do formulário e de seguir a leitura dos códigos*/
+	}
+
+var fone  =  document.dadosdecontato.fone.value;
+var expRegFone = new RegExp("^[(]{1}[1-9]{2}[)]{1}[0-9]{4,5}[-]{1}[0-9]{4}$");
+
+if(!expRegFone.test(fone)){
+	alert("Preencha o campo Telefone corretamente. ");
+		document.dadosdecontato.fone.focus();
+		return false;
+	}
+
+if(document.dadosdecontato.end.value==""){
+	alert("Favor preencha o campo do Endereço corretamente. ");
+		document.dadosdecontato.end.focus();
+		return false;
+	}
+
+return true;/* Confirma que o formulário pode ser enviado*/
+}
+</script>
+<section>
+<div class="blocoForm">
+	<form name="dadosdecontato" method="get" action="insereContato" class="formContato" onsubmit="return validaContatos()">
+		<fieldset>
+			<legend>Contato</legend>
+			<table>
+				<tr>
+					<td>Nome:</td>
+					<td><input type="text" name="nome" placeholder="Nome Sobrenome">
+				</tr>
+				
+				<tr>
+					<td>Telefone:</td>
+					<td><input type="text" name="fone" placeholder=(99)9999-9999>
+				</tr>
+				
+				<tr>
+					<td>Endereço:</td>
+					<td><input type="text" name="end">
+				</tr>
+			</table>
+			<button type="reset">Limpar</button> <button type="submit">Enviar</button>
+			
+		</fieldset>
+	</form>
+	</div>
+</section>	
+</body>
+
+</html>

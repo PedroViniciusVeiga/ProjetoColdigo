@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+			/*Corpo da página*/
+
+body {
+	margin: 0 auto;
+	font-family: "Roboto", sans-serif;
+}
+
+.formContato{
+	float:left;
+	width: 500px;
+	height: 300px;
+}

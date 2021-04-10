@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registro de Contatos</title>
+<link rel="stylesheet" type="text/css" href="css/siteContato.css">
+
+</head>
+
+<body>
+<section>
+<div class="blocoForm">
+	<form name="dadosdecontato" method="post" action="#" class="formContato">
+		<fieldset>
+			<legend>Contato</legend>
+			<label for="nome">Nome Completo:</label> <input type="text" name="txtnome"  id="nome" placeholder="Nome">
+			<label for="fone">Telefone:</label> <input type="text" name="txtfone" placeholder=(99)9999-9999 id="fone"> 
+			<label for="end">Endereço:</label> <input type="text" name="txtend"  id="end">  
+			<button type="reset">Limpar</button> <button type="submit" id="enviar">Enviar</button>
+			<table>
+				<tr>
+
+					<td></td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+	</div>
+</section>	
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+127.0.0.1 - - [09/Apr/2021:19:57:22 -0300] "GET / HTTP/1.1" 404 1036
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:23 -0300] "GET /exemploServlet/ HTTP/1.1" 404 1051
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:32 -0300] "GET /exemploServlet/ HTTP/1.1" 404 1051
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:34 -0300] "GET /exemploServlet/ HTTP/1.1" 404 1051
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:35 -0300] "GET /exemploServlet/ HTTP/1.1" 404 1051
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:35 -0300] "GET /exemploServlet/ HTTP/1.1" 404 1051
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:46 -0300] "GET /ProjetoTrilhaWeb/index.html HTTP/1.1" 200 1517
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:46 -0300] "GET /ProjetoTrilhaWeb/css/site.css HTTP/1.1" 200 2783
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:46 -0300] "GET /ProjetoTrilhaWeb/js/site.js HTTP/1.1" 200 5461
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:46 -0300] "GET /ProjetoTrilhaWeb/imgs/geladeira1.png HTTP/1.1" 200 21198
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:46 -0300] "GET /ProjetoTrilhaWeb/imgs/geladeira2.png HTTP/1.1" 200 18537
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:47 -0300] "GET /ProjetoTrilhaWeb/pages/site/general/cabecalho.html HTTP/1.1" 200 106
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:47 -0300] "GET /ProjetoTrilhaWeb/pages/site/general/menu.html HTTP/1.1" 200 267
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:47 -0300] "GET /ProjetoTrilhaWeb/pages/site/general/rodape.html HTTP/1.1" 200 39
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:47 -0300] "GET /ProjetoTrilhaWeb/imgs/logo.png HTTP/1.1" 200 109630
