@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* Configuração geral do corpo da página*/
+
+body{
+	margin: 0 auto;
+	font-family: "Century Gothic", sans-serif;
+}
+
+/*************************************************
+			    Layout Gerais
+*************************************************/
+
+/*******************    **************************
+		      	  Cabeçalho
+********************     *************************/
+header{
+	height: 120px; 
+	background-color: #008eb6;
+	position: -webkit-sticky;
+	position: sticky;
+	top:0px;
+}
+
+header img{
+	float: left;
+	height: 100px;
+	width: 100px;
+	margin: 10px;
+}
+
+header h1{
+	float: left;
+	margin: 30px 0 15px 30px;
+	font-size: 40px;
+	color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

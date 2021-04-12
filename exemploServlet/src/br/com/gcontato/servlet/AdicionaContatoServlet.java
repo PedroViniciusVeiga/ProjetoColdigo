@@ -21,7 +21,7 @@ public class AdicionaContatoServlet extends HttpServlet{
 		PrintWriter out = response.getWriter();
 		String nome = request.getParameter("nome");
 
-		out.print("Dados de contatos"+"<br>"+
+		out.print("Dados de contatos service"+"<br>"+
 				"Nome do contato:"+nome+"<br>");
 		
 		out = response.getWriter();
@@ -36,7 +36,7 @@ public class AdicionaContatoServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response)
 	throws ServletException, IOException{
-		
+
 	}
 	
 	protected void doPost(HttpServletRequest request,

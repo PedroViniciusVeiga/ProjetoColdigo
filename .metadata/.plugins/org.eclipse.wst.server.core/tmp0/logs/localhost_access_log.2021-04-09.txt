@@ -13,3 +13,14 @@
 0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:47 -0300] "GET /ProjetoTrilhaWeb/pages/site/general/menu.html HTTP/1.1" 200 267
 0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:47 -0300] "GET /ProjetoTrilhaWeb/pages/site/general/rodape.html HTTP/1.1" 200 39
 0:0:0:0:0:0:0:1 - - [09/Apr/2021:19:57:47 -0300] "GET /ProjetoTrilhaWeb/imgs/logo.png HTTP/1.1" 200 109630
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:21:17:58 -0300] "GET /ProjetoTrilhaWeb/pages/admin HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:21:17:58 -0300] "GET /ProjetoTrilhaWeb/pages/admin/ HTTP/1.1" 200 131
+127.0.0.1 - - [09/Apr/2021:21:54:53 -0300] "GET / HTTP/1.1" 404 1036
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:21:54:53 -0300] "GET /ProjetoTrilhaWeb/pages/admin/index.html HTTP/1.1" 200 794
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:21:54:53 -0300] "GET /ProjetoTrilhaWeb/pages/admin/css/admin.css HTTP/1.1" 404 1078
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:21:54:53 -0300] "GET /ProjetoTrilhaWeb/pages/admin/js/admin.js HTTP/1.1" 404 1076
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:21:55:37 -0300] "GET /ProjetoTrilhaWeb/pages/admin/index.html HTTP/1.1" 200 794
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:21:55:37 -0300] "GET /ProjetoTrilhaWeb/pages/admin/css/admin.css HTTP/1.1" 404 1078
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:21:55:37 -0300] "GET /ProjetoTrilhaWeb/pages/admin/js/admin.js HTTP/1.1" 404 1076
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:21:55:38 -0300] "GET /ProjetoTrilhaWeb/pages/admin/js/admin.js HTTP/1.1" 404 1076
+0:0:0:0:0:0:0:1 - - [09/Apr/2021:21:55:38 -0300] "GET /favicon.ico HTTP/1.1" 404 1047
