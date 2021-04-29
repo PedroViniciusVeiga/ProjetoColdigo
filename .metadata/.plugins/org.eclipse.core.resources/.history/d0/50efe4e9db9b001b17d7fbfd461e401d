@@ -1,8 +1,0 @@
-@charset "UTF-8";
-
-/* Configuração geral do corpo da página*/
-
-body{
-	margin: 0 auto;
-	font-family: "Century Gothic", sans-serif;
-}
