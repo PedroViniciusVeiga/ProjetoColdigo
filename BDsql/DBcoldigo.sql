@@ -1,3 +1,4 @@
+
 use bdcoldigo;
 create table if not exists marcas(
 id int unsigned not null auto_increment,
@@ -20,6 +21,9 @@ references marcas (id)
 insert into marcas values(1,"Eletroluks");
 insert into marcas values(2,"Cônsuls");
 insert into marcas values(3,"Brastempi");
+insert into marcas values(4,"Continentau");
+select * from marcas;
+
 
 
 

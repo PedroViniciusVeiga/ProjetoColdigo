@@ -1,3 +1,4 @@
+create database mercado;
 use mercado;
 create table categoria (
 idcategoria int not null primary key auto_increment,
@@ -13,4 +14,4 @@ select descricao from categoria WHERE descricao like 'H%';
 select descricao from categoria WHERE descricao like '%banho';
 select descricao from categoria WHERE descricao like '%es%';
 update categoria set descricao='Frios e laticínios' where idcategoria=4 ;
-delete from categoria where idcategoria=4;
+delete from categoria where idcategoria=5;
