@@ -1,4 +1,4 @@
-
+create database if not exists bdcoldigo default character set utf8;
 use bdcoldigo;
 create table if not exists marcas(
 id int unsigned not null auto_increment,
