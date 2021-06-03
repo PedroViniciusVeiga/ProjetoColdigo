@@ -7,12 +7,49 @@ $(document).ready(function() {
 		alert("Tentando buscar marcas");
 		$.ajax({
 			type: "GET",
-			url: "/ProjetoTrilhaWeb/rest/marca/buscar",
+			url: COLDIGO.PATH + "marca/buscar",
 			success: function(marcas){
-				alert("Sucesso");
+				
+
+				if (marcas!="") {
+					
+					$("#selMarca").html("");
+					var option = document.createElement("option");
+					option.setAttribute ("value", "");
+					option.innerHTML = ("Escolha");
+					$("#selMarca").append(option);
+				
+					for (var i = 0; i < marcas.length; i++) {
+						
+						var option = document.createElement("option");
+						option.setAttribute ("value", marcas[i].id);
+						option.innerHTML = (marcas[i].nome);
+						$("#selMarca").append(option);
+					}
+					
+				}else{
+					
+					$("#selMarca").html("");
+					
+					var option = document.createElement("option");
+					option.setAttribute ("value", "");
+					option.innerHTML = ("Cadastre uma marca primeiro!");
+					$("#selMarca").append(option);
+					$("#selMarca").addClass("aviso");
+					
+				}
 			},
 			error: function(info) {
-				alert("Erro");
+
+				COLDIGO.exibirAviso("Erro ao buscar as marcas: "+ info.status + " - " + info.statusText);
+				
+				$("#selMarca").html("");
+				var option = document.createElement("option");
+				option.setAttribute("value", "");
+				option.innerHTML = ("Erro ao carregar marcas!");
+				$("#selMarca").append(option);
+				$("#selMarca").addClass("aviso");
+				
 			}
 				
 		});
@@ -20,4 +57,41 @@ $(document).ready(function() {
 	}
 	
 	COLDIGO.produto.carregarMarcas();
+	
+	//Cadastra no BD o produto informado
+	COLDIGO.produto.cadastrar = function(){
+		
+		var produto = new Object();
+		produto.categoria = document.frmAddProduto.categoria.value;
+		produto.marcaId = document.frmAddProduto.marcaId.value;
+		produto.modelo = document.frmAddProduto.modelo.value;
+		var expRegModelo = new RegExp("^[A-zÀ-ü]{3,}$");
+		produto.capacidade = document.frmAddProduto.capacidade.value;
+		var expRegCapacidade = new RegExp("^[0-9]{1,}$");
+		produto.valor = document.frmAddProduto.valor.value;
+		var expRegValor = new RegExp("^[0-9]{1,}[,]{1}[0-9]{2}$");
+		
+		
+		if ((produto.categoria=="")||(produto.marcaId=="")||(!expRegModelo.test(produto.modelo))||(!expRegCapacidade.test(produto.capacidade))||(!expRegValor.test(produto.valor))){
+		COLDIGO.exibirAviso("Preencha todos os campos!");
+		
+		} else {
+			var valorCorreto = produto.valor.replace(",", ".");
+			produto.valor = valorCorreto;
+			$.ajax({
+				type: "POST", //requisição, utilizado desta forma por se tratar de um formulário, e as informações não poderem ser visiveis
+				url: COLDIGO.PATH + "produto/inserir",
+				data:JSON.stringify(produto), //transformar o objeto produto em String, transoformado em texto para ser enviado formatado
+				success: function (msg) {
+			COLDIGO.exibirAviso(msg);
+			$("#addProduto").trigger("reset"); //para limpar o form após aceitar o cadastro
+				},
+				error: function(info) {
+					COLDIGO.exibirAviso("Erro ao cadastrar um novo produto: "+ info.status + " - " + info.statusText);
+					
+				}
+			});
+		}
+	}
+	
 });
