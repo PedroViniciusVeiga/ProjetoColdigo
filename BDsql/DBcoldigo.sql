@@ -23,7 +23,7 @@ insert into marcas values(2,"Cônsuls");
 insert into marcas values(3,"Brastempi");
 insert into marcas values(4,"Continentau");
 select * from marcas;
-
+delete from produtos where id =1;
 
 
 

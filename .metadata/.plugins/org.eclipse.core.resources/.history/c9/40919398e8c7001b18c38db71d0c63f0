@@ -1,0 +1,21 @@
+package br.com.coldigogeladeiras.jdbcinterface;
+
+import java.util.List;
+
+import com.google.gson.JsonObject;
+
+import br.com.coldigogeladeiras.modelo.Produto;
+
+public interface ProdutoDAO {
+
+	public boolean inserir(Produto produto);
+	public List<JsonObject> buscarPorNome(String nome);
+	
+	//inicia a criação do comando SQL de busca
+	String comando = "SELECT produtos.*, marcas.nome as marcas FROM produtos INNER JOIN marcas ON produtos,marcas_id = marcas.id ";
+	//Se o nome não estiver vazio...
+	if(!nome.equals("")) {
+		
+	}
+}
+
