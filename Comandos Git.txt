@@ -5,7 +5,7 @@ E-mail
 git config --global user.email "pedro_v_veiga@estudante.sc.senai.br"
 
 Adicionar ao primeiro estagio
-git add *
+git add .
 
 Commitar
 git commit -m " NOME "
