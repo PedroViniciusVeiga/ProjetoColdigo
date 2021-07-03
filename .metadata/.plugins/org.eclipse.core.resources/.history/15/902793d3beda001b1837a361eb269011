@@ -1,0 +1,15 @@
+package br.com.coldigogeladeiras.jdbcinterface;
+
+import java.util.List;
+
+import javax.ws.rs.core.Response;
+
+import br.com.coldigogeladeiras.modelo.Marca;
+
+public interface MarcaDAO {
+	
+	
+	public List<Marca> buscar();
+	public boolean inserir(Marca marca);
+
+}

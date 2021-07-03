@@ -13,6 +13,11 @@ $(document).ready(function(){
 	//função para carregamento de páginas de conteúdo, que
 	// recebe como parâmetro o nome da pasta com a página a ser carregada
 	COLDIGO.carregaPagina = function(pagename){
+		//remove o conteúdo criado na abertura de uma janela modal jQueryUI
+		if ($(".ui-dialog"))
+			$(".ui-dialog").remove();
+		
+		
 		//limpa a tag section, excluindo todo o conteúdo dentro dela
 		$("section").empty();
 		//Carrega a página solicitada dentro da tag section
@@ -40,5 +45,9 @@ $(document).ready(function(){
 		};
 		$("#modalAviso").html(aviso);
 		$("#modalAviso").dialog(modal);
+	}
+	//Exibe os valores financeiros no formato da moeda real
+	COLDIGO.formatarDinheiro = function(valor){
+		return valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+\,)/g, "$1.");
 	}
 });
