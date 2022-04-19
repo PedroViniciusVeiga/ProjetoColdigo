@@ -1,7 +1,7 @@
 <script src="../../js/marcas.js"></script>
 
 <h2>Registro de Marcas</h2>
-<form name="frmAddMarcas" id="addMarca" class="frmInserir">
+<form name="frmAddMarcas"method="post" id="addMarca" class="frmInserir">
 	<fieldset>
 		<legend>Nova Marca</legend>
 		<table>
@@ -19,7 +19,7 @@
 	</fieldset>
 </form>
 <h3>Marcas registradas</h3>
-<form id="filtraMarca" class="frmFiltrar">
+<form id="filtraMarca" method="post" class="frmFiltrar">
 	<fieldset>
 		<legend>Filtrar</legend>
 		<input type="text" name="txtbusca" id="campoBuscaMarcas"
@@ -41,3 +41,13 @@
 		<input type="hidden" name="marcaId">
 	</form>
 </div>
+<div id="modalExcluiMarcas"  class="modalEditar">
+<form name="frmExcluirProd" id="editaMarca" class="frmEditar">
+<table>
+			<tr>
+			<th>Deseja Realmente excluir a marca?</th>
+			</tr>
+			</table>
+			</form>
+</div>
+

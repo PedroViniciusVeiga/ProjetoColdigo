@@ -25,7 +25,7 @@ $(document).ready(function() {
 		   COLDIGO.marcas.buscar();
 				},
 				error: function(info) {
-					COLDIGO.exibirAviso("Erro ao cadastrar uma nova marca: "+ info.status + " - " + info.statusText);
+					COLDIGO.exibirAviso("Erro ao cadastrar uma nova marca: "+ info.status + " - " + info.responseText);
 					
 				}
 			});
@@ -42,42 +42,50 @@ $(document).ready(function() {
 			url: COLDIGO.PATH + "marcas/buscarMarcas",
 			data: "valorBusca="+valorBusca,
 			success: function(dados){
-				
+				console.log(dados);
 				dados = JSON.parse(dados);
 				$("#listaMarcas").html(COLDIGO.marcas.exibir(dados));
 				
 				
 			},
 			error: function(info){
-				COLDIGO.exibirAviso("Erro ao consultar as marcas: "+ info.status + " - " + info.statusText);
+				COLDIGO.exibirAviso("Erro ao consultar as marcas: "+ info.status + " - " + info.responseText);
 			}
 		});
 	};
 	
 	//Transforma os dados dos produtos recebidos do servidor em uma tabela HTML
 	COLDIGO.marcas.exibir = function(listaDeMarcas) {
-		
 		var tabela = "<table>" +
 				"<tr>" +
 				"<th>Nome</th>" +
 				"<th class='acoes'>Ações</th>" +
+				"<th class='acoes'>Status</th>" +
 				"</tr>";
 		
 		if (listaDeMarcas != undefined && listaDeMarcas.length > 0){
 			
 			for (var i=0; i<listaDeMarcas.length; i++){
+				
+				var statusValor = "";
+				if(listaDeMarcas[i].status == 1){
+					statusValor = "checked";
+				}
+				
 				tabela += "<tr>" +
 				"<td>"+listaDeMarcas[i].nome+"</td>" +
 				"<td>" +
 				"<a  onclick=\"COLDIGO.marcas.exibirEdicao('"+listaDeMarcas[i].id+"')\"><img src='../../imgs/edit.png' alt='Editar Registro'></a> " +
-				"<a onclick=\"COLDIGO.marcas.excluir('"+listaDeMarcas[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir Registro'></a> " +
+				"<a onclick=\"COLDIGO.marcas.confirmaExclusao('"+listaDeMarcas[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir Registro'></a> " +
 				"</td>" +
+				"<td>"+
+				"<label onclick=\"COLDIGO.marcas.ativaMarca('"+listaDeMarcas[i].id+"',this)\"class='switch'><input name= 'statusMarca' type='checkbox' "+statusValor+"><span class='slider round'></span></label></td>"+
 				"</tr>"
 
 			}
 				
 		} else if (listaDeMarcas == ""){
-			tabela += "<tr><td colspan='6'>Nenhum registro encontrado</td></tr>";
+			tabela += "<tr><td colspan='3'>Nenhum registro encontrado</td></tr>";
 		}
 		tabela += "</table>";
 		
@@ -87,18 +95,19 @@ $(document).ready(function() {
 	
 	//Executa a função de busca ao carregar a página
 	COLDIGO.marcas.buscar();
-	
+	 
 	//Exclui o produto selecionado
 	COLDIGO.marcas.excluir = function(id){
 		$.ajax({
 			type:"DELETE",
 			url: COLDIGO.PATH + "marcas/excluir/"+id,
 			success: function(msg){
+				//Verificação pode ficar aqui
 				COLDIGO.exibirAviso(msg);
 				COLDIGO.marcas.buscar();
 			},
 			error: function(info){
-				COLDIGO.exibirAviso("Erro ao excluir marca: "+ info.status + " - " + info.statusText);
+				COLDIGO.exibirAviso("Erro ao excluir marca: "+ info.status + " - " + info.responseText);
 			}
 		});
 	};
@@ -140,7 +149,7 @@ $(document).ready(function() {
 		
 			},
 			error: function(info){
-				COLDIGO.exibirAviso("Erro ao buscar marcas para edição: "+ info.status + " - " + info.statusText);
+				COLDIGO.exibirAviso("Erro ao buscar marcas para edição: "+ info.status + " - " + info.responseText);
 			}
 	});
 	};
@@ -166,10 +175,53 @@ $(document).ready(function() {
 				//mensagem de aviso do sucesso atraves da modal
 			},
 			error: function(info){
-				COLDIGO.exibirAviso("Erro ao editar marca: "+ info.status + " - "+ info.statusText);
+				
+				COLDIGO.exibirAviso("Erro ao editar marca: "+ info.status + " - "+ info.responseText);
 				
 			}	
 			});
 	};
+	
+	COLDIGO.marcas.confirmaExclusao = function(id){
+		var modalExcluiMarcas = {
+				title: "Excluir Marcas",
+				height: 250,
+				width: 550,
+				modal: true,
+				buttons:{
+					"Excluir": function(){
+						COLDIGO.marcas.excluir(id)
+						$(this).dialog("close");
+					},	
+				"Cancelar": function(){
+					$(this).dialog("close");
+				
+			}
+				},
+			close: function(){
+				//caso o usuário simplismente feche a caixa de edição
+				//não deve acontecer nada
+			}
+		};
+
+	$("#modalExcluiMarcas").dialog(modalExcluiMarcas);
+	};
+
+	COLDIGO.marcas.ativaMarca = function(id,checkbox){
+
+		$.ajax({
+			type: "PUT",
+			url: COLDIGO.PATH + "marcas/ativaMarca/"+id, 
+			success: function(msg){
+				COLDIGO.exibirAviso(msg);
+			},
+			error: function(info){
+				checkbox.checked=!checkbox.checked;
+				COLDIGO.exibirAviso("Erro ao alterar status da marca: "+ info.status + " - "+ info.responseText);
+			}	
+			});
+
+		
+	}
 	
 });//Fim

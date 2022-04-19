@@ -50,7 +50,7 @@ $(document).ready(function() {
 			},
 			error: function(info) {
 
-				COLDIGO.exibirAviso("Erro ao buscar as marcas: "+ info.status + " - " + info.statusText);
+				COLDIGO.exibirAviso("Erro ao buscar as marcas: "+ info.status + " - " + info.responseText);
 				
 				$(select).html("");
 				var option = document.createElement("option");
@@ -97,7 +97,8 @@ $(document).ready(function() {
 			COLDIGO.produto.buscar();
 				},
 				error: function(info) {
-					COLDIGO.exibirAviso("Erro ao cadastrar um novo produto: "+ info.status + " - " + info.statusText);
+					
+					COLDIGO.exibirAviso("Erro ao cadastrar um novo produto: "+ info.status + " - " + info.responseText);
 					
 				}
 			});
@@ -121,7 +122,7 @@ $(document).ready(function() {
 				
 			},
 			error: function(info){
-				COLDIGO.exibirAviso("Erro ao consultar os produtos: "+ info.status + " - " + info.statusText);
+				COLDIGO.exibirAviso("Erro ao consultar os produtos: "+ info.status + " - " + info.responseText);
 			}
 		});
 		
@@ -151,7 +152,7 @@ $(document).ready(function() {
 				"<td>R$	"+COLDIGO.formatarDinheiro(listaDeProdutos[i].valor)+"</td>" +
 				"<td>" +
 				"<a  onclick=\"COLDIGO.produto.exibirEdicao('"+listaDeProdutos[i].id+"')\"><img src='../../imgs/edit.png' alt='Editar Registro'></a> " +
-				"<a onclick=\"COLDIGO.produto.excluir('"+listaDeProdutos[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir Registro'></a> " +
+				"<a onclick=\"COLDIGO.produto.confirmaExclusao('"+listaDeProdutos[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir Registro'></a> " +
 				"</td>" +
 				"</tr>"
 
@@ -175,15 +176,17 @@ $(document).ready(function() {
 	
 	//Exclui o produto selecionado
 	COLDIGO.produto.excluir = function(id){
+		
 		$.ajax({
 			type:"DELETE",
 			url: COLDIGO.PATH + "produto/excluir/"+id,
 			success: function(msg){
-				COLDIGO.exibirAviso(msg);
-				COLDIGO.produto.buscar();
-			},
+				
+			COLDIGO.exibirAviso(msg);
+			COLDIGO.produto.buscar();
+			},		
 			error: function(info){
-				COLDIGO.exibirAviso("Erro ao excluir produto: "+ info.status + " - " + info.statusText);
+				COLDIGO.exibirAviso("Erro ao excluir produto: "+ info.status + " - " + info.responseText);
 			}
 		});
 	};
@@ -242,7 +245,8 @@ $(document).ready(function() {
 		
 			},
 			error: function(info){
-				COLDIGO.exibirAviso("Erro ao buscar produtos para edição: "+ info.status + " - " + info.statusText);
+				
+				COLDIGO.exibirAviso("Erro ao buscar produtos para edição: "+ info.status + " - " + info.responseText);
 			}
 	});
 	};
@@ -271,10 +275,35 @@ $(document).ready(function() {
 				//mensagem de aviso do sucesso atraves da modal
 			},
 			error: function(info){
-				COLDIGO.exibirAviso("Erro ao editar produto: "+ info.status + " - "+ info.statusText);
+				COLDIGO.exibirAviso("Erro ao editar produto: "+ info.status + " - "+ info.responseText);
 				
 			}	
 			});
 	};
+	
+	COLDIGO.produto.confirmaExclusao = function(id){
+	var modalExcluiProduto = {
+			title: "Excluir Produtos",
+			height: 250,
+			width: 550,
+			modal: true,
+			buttons:{
+				"Excluir": function(){
+					COLDIGO.produto.excluir(id)
+					$(this).dialog("close");
+				},	
+			"Cancelar": function(){
+				$(this).dialog("close");
+			
+		}
+			},
+		close: function(){
+			//caso o usuário simplismente feche a caixa de edição
+			//não deve acontecer nada
+		}
+	};
+
+$("#modalExcluiProduto").dialog(modalExcluiProduto);
+};
 	
 });//Fim

@@ -23,7 +23,48 @@ insert into marcas values(2,"Cônsuls");
 insert into marcas values(3,"Brastempi");
 insert into marcas values(4,"Continentau");
 select * from marcas;
-delete from produtos where id =1;
+/*delete from produtos where id =1;*/
+ALTER TABLE marcas ADD status tinyint(1) NOT NULL DEFAULT 1;
+update marcas set status = 0 where id = 2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 <script src="../../js/product.js"></script>
 
 <h2>Registro de produtos</h2>
-<form name="frmAddProduto" id="addProduto" class="frmInserir">
+<form name="frmAddProduto" method="post" id="addProduto" class="frmInserir">
 	<fieldset>
 		<legend>Novo Produto</legend>
 		<table>
@@ -54,7 +54,7 @@
 
 
 <div id="modalEditaProduto" class="modalEditar">
-	<form name="frmEditaProduto" id="editaProduto" class="frmEditar">
+	<form name="frmEditaProduto" method="post" id="editaProduto" class="frmEditar">
 		<table>
 			<tr>
 				<th>Categoria</th>
@@ -86,4 +86,13 @@
 		</table>
 		<input type="hidden" name="idProduto">
 	</form>
+</div>
+<div id="modalExcluiProduto"  class="modalEditar">
+<form name="frmExcluirProd" id="editaProduto" class="frmEditar">
+<table>
+			<tr>
+			<th>Deseja Realmente excluir o produto?</th>
+			</tr>
+			</table>
+			</form>
 </div>
