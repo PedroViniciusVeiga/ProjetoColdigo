@@ -124,7 +124,7 @@ section h2, section h3{
 }
 
 .frmInserir{
-	width: 500px;
+	min-width: 500px;/* M1 */
 }
 
 .frmFiltrar{
@@ -160,6 +160,30 @@ section h2, section h3{
 	font-weight: bold;
 }
 
+.frmInserir .botaoAdd{/* M1 */
+background-color: #008000;
+	
+}
+
+.frmInserir .botaoRemove{/* M1 */
+background-color: #ff0000;
+	
+}
+
+.frmInserir fieldset{/* M1 */
+margin:0px auto;
+width: fit-content;	
+}
+
+.frmInserir .campoPequeno{/* M1 */
+padding: 2px 0;
+width: 100px;	
+}
+
+.frmInserir .campoMedio{/* M1 */
+padding: 2px 0;
+width: 200px;	
+}
 /**********   Tabela de Registros   ***********/
 
 .listaRegistros{
