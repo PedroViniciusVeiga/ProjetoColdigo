@@ -1,0 +1,320 @@
+@charset "UTF-8";
+
+			/*Corpo da página*/
+
+body {
+	margin: 0 auto;
+	font-family: "Century Gothic", sans-serif;
+}
+
+/*****************************************
+			Configurações Gerais
+******************************************/
+header{
+	height: 140px;
+	background-color: #FF0000;
+}
+header h1{/*Titulo*/
+	margin: 0 auto;
+	height: 100px;
+}
+header h2{
+	text-align: center;
+	background-color: black;
+}
+/*****************************************
+			Configurações Menu
+******************************************/
+nav{
+	clear: both;
+	width: 100%;
+	margin: 0px auto;
+}
+nav a{
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+}
+nav .opcao{/* opções do menu*/
+	float: left;
+	width: 25%;
+	background-color: #AE0E0E;
+	font-size: 21px;
+	height: 30px;
+}
+nav .opcao:hover{/* opções de o mouse selecionar*/
+	background-color: black;
+}
+section {
+	/*background-image: url(../img/fundo.jpg);*/
+	clear:both;
+	min-height:424px;
+	width: 100%;
+	margin-top:0px;
+	
+}
+/*****************************************
+			       Rodapé
+******************************************/
+footer{
+	background-color: #FF0000;
+	color: #ffffff;
+	text-align: center;
+	padding: 10px;
+	clear: both;
+}
+
+/*****************************************
+
+		  Page - Sobre Coca-Cola
+			
+/*****************************************
+			  Box de textos
+******************************************/
+.caixatxt {
+	background: #ffffff;
+	border: 3px solid #ff0000;
+	padding: 15px;
+	text-align: center;
+	width: 300px;
+	height: 646px;
+}
+.caixaconfig {
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 2%;
+}
+.layout {
+	width: 25%;
+	float: left;
+}
+.caixatitulos{
+	text-align:center;
+}
+.imgcaixa{
+	width: 280px;
+	height: 210px;
+}
+#imgesq{
+	padding-top: 50px;
+	padding-left: 5px;
+	padding-right: 5px;
+	
+}
+#imgdir{
+	padding-top: 90px;
+	padding-left: 5px;
+	padding-right: 5px;
+	
+}
+/*****************************************
+			   Tabelas
+******************************************/
+table{
+	width: 336px;
+	
+}
+.caixatable{
+  	padding-left: 2.5%;
+	padding-right: 2.5%;
+	padding-top: 4%;
+	height: 800px;
+}
+#ingredientestable{
+	padding-top: 6.8%;
+}
+
+#sobreimgfoot{
+	border: 3px solid black;
+} 
+.sobreTabela{
+	margin: 10px auto;
+	text-align: center;
+	color: #fff;
+}
+.tituloTabela{
+	border: 1px solid black;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+
+
+	}
+tr,td,th{
+	border: 1px solid black;
+	font-weight: bold;
+}
+tr,td{
+	font-size: 15px;
+	padding: 5px;
+}
+tr:nth-child(even){
+	background-color: #c10000;
+}
+tr:nth-child(odd){
+	background-color:  #e10000;
+}
+
+/*****************************************
+			   Index Config.
+******************************************/
+#titulos {
+	clear: both; 
+	text-align : center;
+	margin: 90px 0 60px 0;
+	text-align: center;
+}
+.imgindex {/*dimenções das imagens*/
+	width: 300px;
+	height: 230px;
+	border: 3px solid #AE0E0E;
+}
+/*  verificar se é correto na validação*/
+#noticias {
+	margin-left: 30px;
+	margin-right: 23px;
+	float: left;
+	background-color: red;
+	margin-bottom: 30px;
+}
+#curiosidade {
+	float: left;
+	background-color: red;
+	margin-bottom: 30px;
+}
+#destaque {
+	margin-left: 23px;
+	margin-right: 30px;
+	float: right;
+	background-color: red;
+	margin-bottom: 30px;
+}
+#valor {
+	float: right;
+	background-color: red;
+	margin-bottom: 30px;
+ }
+.txtfoot {
+	clear: both; 
+	text-align : center;
+	padding: 0 50px;
+	margin-top: 90px;
+	height: 340px;
+	padding-bottom: 25px;
+}
+#embalagens {
+	width: 500px;
+	height: 270px;
+	border: 3px solid black;
+}
+#txtnoticia{
+	margin-left: 120px;
+	width: 150px;
+	color: white;
+	font-size: 21px;
+}
+#txtcurios{
+	margin-left: 93px;
+	width: 150px;
+	color: white;
+	font-size: 21px;
+}
+#txtdestaq{
+	margin-left: 98px;
+	width: 150px;
+	color: white;
+	font-size: 21px;
+}
+#txtvalor{
+	margin-left: 70px;
+	width: 150px;
+	color: white;
+	font-size: 21px;
+}
+/*****************************************
+		   Inscreva-se Config.
+******************************************/
+.inscricaoInfo{
+    width: 70%;
+    float: left;
+}
+.inscricaoForm{
+    width: 30%;
+    font-weight: bold;
+    float: left;
+    padding-top:5px;
+}
+.inscricao input{
+	margin: 5px auto;
+	
+}
+.inscricao button{
+	float:left;
+	margin-left: 2%;
+	font-size: 15px;
+	font-weight: bold;
+	
+}
+.imgInscricao{
+	width: 300px;
+    height: 200px;
+    margin-top:15px;
+    margin-left:111px;
+    border: 3px solid black;
+    
+}
+.tableInscricao{
+	width:300px;
+	padding-top:10.6px;
+	margin: 0 auto;
+	color: #fff;
+}
+.formInscricao{
+	width: 220px;
+}
+/*****************************************
+		       Loja Config.
+******************************************/
+#lojaTitulo{
+	text-align: center;
+	padding-top: 5px;
+}
+.imgLoja{
+	width: 180px;
+	height: 157px;
+	border: 2px solid black; 
+	margin-left: 40px;
+	margin-top: 15px;
+	
+}
+.txtFigure{
+	text-align: center;
+	font-weight: bold;
+}
+.txtFigCaption{
+	color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
