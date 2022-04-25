@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Fã Clube Coca Cola">
+<meta name="keywords" content="Coca Cola, Fã Clube">
+<meta name="author" content="Pedro Vinicius Veiga - Escola Sistêmica">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fã Clube Coca-Cola</title>
+<link rel="stylesheet" type="text/css" href="../../css/site.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="../../js/site.js"></script>
+</head>
+<body>
+	<header>
+		
+	</header>
+
+	<nav>
+	</nav>
+	<section>
+		<div class="inscricaoInfo">
+
+
+			<table class="tableInscricao">
+				<thead>
+					<tr>
+						<th colspan="1" class="tituloTabela">Todos os dias temos:</th>
+					</tr>
+					<tr>
+						<td>Curiosidades</td>
+					</tr>
+					<tr>
+						<td>Noticias</td>
+					</tr>
+					<tr>
+						<td>Memes</td>
+					</tr>
+					<tr>
+						<td>Bate-papo interativo</td>
+					</tr>
+				</thead>
+			</table>
+
+
+
+			<img src="../../img/inscreva-se/images1.jpg"
+				alt="Imagem de Amigos Brindando Coca Cola" class="imgInscricao">
+
+			<img src="../../img/inscreva-se/images.jpg"
+				alt="Imagem Amigos de Bebendo Coca Cola" class="imgInscricao">
+
+		</div>
+
+
+		<div class="inscricaoForm">
+
+			<form name="clubecoca" method="post" action="#" class="formInscricao" onsubmit="return validaInscricao()">
+				<fieldset>
+					<legend>Inscreva-se:</legend>
+					<label for="nome">Nome Completo:</label> <input type="text" name="txtnome"  id="nome" placeholder="Nome Sobrenome">
+					<label for="cpf">CPF:</label> <input type="text" name="txtcpf"  id="cpf" placeholder="CPF - 000.000.000-00">  
+					<label for="fone">Telefone:</label> <input type="text" name="txtfone" placeholder=(99)9999-9999 id="fone"> 
+					<label for="email">E-mail: </label> <input type="email" name="txtemail" placeholder=exemple@dominio.com.br id="email"> 
+					<label for="datanascimento">Data de Nascimento: </label> <input type="date" name="txtdata" id="datanascimento">
+				
+					<label>Genêro</label><br> 
+						<input type="radio" name="txtgenero" id="masc" value="masculino">
+					<label for="genero">Masculino</label>
+					<br> 
+					<input type="radio"name="txtgenero" id="fem" value="feminino"> 
+					<label for="genero">Feminino</label> 
+					<br> 
+					<input type="radio" name="txtgenero" id="outro" value="outro">
+					<label for="genero">Outro</label> 
+					<br> 
+					<label>Desejo se inscrever no Fã clube</label>
+					<br> 
+					<input type="checkbox" nome="opcsim" id="opcsim" onclick="return verificaInscricao()" >
+					<label for="opcsim">Aceito</label> <br>
+					<button type="reset">Limpar</button>
+					<button type="submit" id="enviar" disabled>Enviar</button>
+
+				</fieldset>
+			</form>
+		</div>
+	</section>
+	<footer></footer>
+</body>
+</html>

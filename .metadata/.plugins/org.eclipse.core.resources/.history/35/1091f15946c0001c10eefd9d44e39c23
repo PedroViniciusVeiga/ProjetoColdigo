@@ -1,0 +1,29 @@
+COLDIGO.compra = new Object();
+
+$(document).ready(function(){
+	
+/*********************************
+	Funções do Mestre Detalhe
+*********************************/
+
+/* Função para criar uma nova linha no detalhe do form*/
+
+//Ao clicar no botão add
+$(".botaoAdd").click(function(){
+	
+	//cria um clone da primeira linha e salva na "novoCampo"
+	var novoCampo = $("tr.detalhes:first").clone();
+	
+	//Esvazia os inputs do clone
+	novoCampo.find("input").val("");
+	
+	//Insere o clone na página, logo após a ultima linha
+	novoCampo.insertAfter("tr.detalhes:last");
+	
+	
+	
+});
+
+
+	
+});

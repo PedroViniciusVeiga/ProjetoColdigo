@@ -1,0 +1,7 @@
+<classpath>
+  <container id="ProjetoTrilhaWeb!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="C:/Users/Pedro Veiga/Desktop/Workspace Web/ProjetoTrilhaWeb/WebContent/WEB-INF/lib/mysql-connector-java-8.0.25.jar">
+      <source-attachment-path>C:/Users/Pedro Veiga/Desktop/Workspace Web/ProjetoTrilhaWeb/WebContent/WEB-INF/lib/mysql-connector-java-8.0.25.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>
