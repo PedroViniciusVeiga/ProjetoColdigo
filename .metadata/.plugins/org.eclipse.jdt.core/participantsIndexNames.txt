@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\SENAI\Desktop\Workspace Web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\71538927.index
-\ProjetoTrilhaWeb\src
