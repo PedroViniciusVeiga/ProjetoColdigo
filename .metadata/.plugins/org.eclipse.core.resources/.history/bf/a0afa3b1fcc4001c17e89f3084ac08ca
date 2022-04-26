@@ -144,9 +144,7 @@ $(".botaoAdd").click(function(){
 	COLDIGO.compra.cadastrar = function(){
 	
 	if(COLDIGO.compra.validaDetalhe()){
-		var compra = new Object();
-		compra.data = document.frmAddCompra.txtData.value;
-		compra.fornecedor
+		alert("ok");
 	}
 
 

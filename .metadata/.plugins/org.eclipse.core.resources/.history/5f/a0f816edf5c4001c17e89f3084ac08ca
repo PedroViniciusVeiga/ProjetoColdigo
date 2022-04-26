@@ -26,7 +26,7 @@ $(document).ready(function(){
 					//Cria uma opção vazia, para validarmos o campo depois
 					var option = document.createElement("option");
 					option.setAttribute ("value", "");
-					option.innerHTML = ("Escolha");
+					option.innerHTML = ("value", "Escolha");
 					//coloca o campo no select correto
 					$(camposMarcas[id]).append(option);
 					
@@ -110,48 +110,6 @@ $(".botaoAdd").click(function(){
 		//fecha a função
 	}
 
-	/* Função para validar os campos do formulário*/
-	
-	COLDIGO.compra.validaDetalhe = function(){
-		//Recebe os produtos preenchidos
-		var produtosValidar  = document.getElementsByName("selProduto[]");
-		//Recebe as quantidades preenchidas
-		var qtdeValidar =  document.getElementsByName("txtQuantidade[]");
-		var valorValidar =  document.getElementsByName("txtValor[]");
-		//Para cada linha detalhe
-		for(var i = 0;i <produtosValidar.length; i++){
-			//Cria a variável linha com valor de "i+1" para a mensagem avisar corretamente qual linha não foi preenchida
-			var linha = i+1;
-			if(/*(produtosValidar[i].value=="")||*/(qtdeValidar[i].value=="")||(valorValidar[i].value=="")){
-				//Avisa que não foi preenchida
-				COLDIGO.exibirAviso("A linha "+linha+" não foi completamente preenchida");
-				//Retorna falso, encerrando a função
-				return false;
-			}
-		}
-		//Se chegar aqui, esta tudo ok e return true
-		return true;
-	}
-	
 
-
-
-	/******************************** */
-	//		Funções Compras
-	/******************************** */
-	
-	
-	COLDIGO.compra.cadastrar = function(){
-	
-	if(COLDIGO.compra.validaDetalhe()){
-		var compra = new Object();
-		compra.data = document.frmAddCompra.txtData.value;
-		compra.fornecedor
-	}
-
-
-	}
-	
-	
 	
 });

@@ -52,12 +52,12 @@
 			<input type="text" name="txtValor[]" class="campoPequeno">
 			</td>
 				<td>
-			<button type="button" name="removeProduto" class="botaoRemove" onclick="COLDIGO.compra.removeCampo(this)">-</button>
+			<button type="button" name="removeProduto" class="botaoRemove">-</button>
 			</td>
 			</tr>
 			<tr>
 			<td colspan="6">
-			<button type="button" onclick = "COLDIGO.compra.cadastrar()">Cadastrar</button>
+			<button type="button">Cadastrar</button>
 			<button type="reset">Limpar</button>
 			</td>
 			</tr>
