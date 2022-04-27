@@ -6,3 +6,4 @@
 1651013266295	Encapsulate field 'idProduto'
 1651013270041	Encapsulate field 'quantidade'
 1651013280868	Encapsulate field 'valor'
+1651018369842	Rename type 'CompraDao'

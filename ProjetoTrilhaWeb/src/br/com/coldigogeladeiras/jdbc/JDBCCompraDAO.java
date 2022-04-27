@@ -1,0 +1,40 @@
+package br.com.coldigogeladeiras.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import br.com.coldigogeladeiras.jdbcinterface.CompraDAO;
+import br.com.coldigogeladeiras.modelo.Compra;
+
+public class JDBCCompraDAO implements CompraDAO {
+
+	private Connection conexao;
+	
+	public JDBCCompraDAO(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	public boolean inserir (Compra compra){
+	
+		String comando = "INSERT into compras (id, data, fornecerdor) values (?,?,?)";
+		PreparedStatement p;
+		try {
+			p = this.conexao.prepareStatement(comando, PreparedStatement.RETURN_GENERATED_KEYS);
+			p.setInt(1,  compra.getId());
+			p.setString(2, compra.getData());
+			p.setString(3, compra.getFornecedor());
+			p.execute();
+			ResultSet idGerado = p.getGeneratedKeys();
+			while(idGerado.next()) {
+				
+			}
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+}

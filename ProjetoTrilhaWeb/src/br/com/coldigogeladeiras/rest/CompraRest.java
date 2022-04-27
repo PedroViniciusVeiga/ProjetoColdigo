@@ -1,5 +1,7 @@
 package br.com.coldigogeladeiras.rest;
 
+import java.sql.Connection;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -7,6 +9,7 @@ import javax.ws.rs.core.Response;
 
 import com.google.gson.Gson;
 
+import br.com.coldigogeladeiras.bd.Conexao;
 import br.com.coldigogeladeiras.modelo.Compra;
 import br.com.coldigogeladeiras.modelo.ProdutoCompra;
 
@@ -17,23 +20,15 @@ public class CompraRest extends UtilRest{
 	@Path("/inserir")
 	@Consumes("application/*")
 	public Response inserir(String compraParam) {
-		
+		System.out.println(compraParam);
 		try {
 			
 			
 			Compra compra = new Gson().fromJson(compraParam, Compra.class);
+			Conexao conec = new Conexao();
+			Connection conexao = conec.abrirConexao();
 			
-			System.out.println(compra.getData());
-			System.out.println(compra.getFornecedor());
-			for(ProdutoCompra produto: compra.getProdutos()) {
-				System.out.println("Produto");
-				System.out.println(produto.getIdProduto());
-				System.out.println(produto.getQuantidade());
-				System.out.println(produto.getValor());
-
-			}
 			
-			return this.buildResponse("Sucesso!");
 			
 		}catch(Exception e) {
 			e.printStackTrace();

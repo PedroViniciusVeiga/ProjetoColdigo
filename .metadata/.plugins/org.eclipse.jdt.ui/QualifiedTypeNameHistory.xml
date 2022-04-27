@@ -6,7 +6,13 @@
     <fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.modelo.Compra"/>
     <fullyQualifiedTypeName name="com.google.gson.Gson"/>
     <fullyQualifiedTypeName name="br.com.coldigogeladeiras.modelo.ProdutoCompra"/>
+    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.bd.Conexao"/>
+    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.jdbcinterface.CompraDAO"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.modelo.Compra"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 </qualifiedTypeNameHistroy>

@@ -155,7 +155,7 @@ $(document).ready(function() {
 			compra.produtos = new Array(produtos.length);
 			for (var i = 0; i < produtos.length; i++) {
 				compra.produtos[i] = new Object();
-				compra.produtos[i].idProduto = produtos[i].value;
+				compra.produtos[i].idProduto = 1;
 				compra.produtos[i].quantidade = quantidades[i].value;
 				compra.produtos[i].valor = valores[i].value;
 
@@ -164,7 +164,7 @@ $(document).ready(function() {
 			$.ajax({
 				type: "POST",
 				url: COLDIGO.PATH + "compra/inserir",
-				data:JSON.stringify(compra),
+				data: JSON.stringify(compra),
 				success: function(msg){
 					COLDIGO.exibirAviso(msg);
 				},
