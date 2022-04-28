@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import br.com.coldigogeladeiras.jdbcinterface.CompraDAO;
 import br.com.coldigogeladeiras.modelo.Compra;
+import br.com.coldigogeladeiras.modelo.ProdutoCompra;
 
 public class JDBCCompraDAO implements CompraDAO {
 
@@ -18,7 +19,7 @@ public class JDBCCompraDAO implements CompraDAO {
 	
 	public boolean inserir (Compra compra){
 	
-		String comando = "INSERT into compras (id, data, fornecerdor) values (?,?,?)";
+		String comando = "INSERT into compras (id, data, fornecedor) values (?,?,?)";
 		PreparedStatement p;
 		try {
 			p = this.conexao.prepareStatement(comando, PreparedStatement.RETURN_GENERATED_KEYS);
@@ -28,7 +29,12 @@ public class JDBCCompraDAO implements CompraDAO {
 			p.execute();
 			ResultSet idGerado = p.getGeneratedKeys();
 			while(idGerado.next()) {
-				
+				for(ProdutoCompra produto: compra.getProdutos()) {
+					produto.setIdCompra(idGerado.getInt(1));
+					JDBCProdutoCompraDAO jdbcProdutoCompra = new JDBCProdutoCompraDAO(this.conexao);
+					jdbcProdutoCompra.inserir(produto);
+					
+				}
 			}
 		} catch (SQLException e) {
 			// TODO: handle exception

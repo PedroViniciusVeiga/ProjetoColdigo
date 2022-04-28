@@ -95,6 +95,7 @@ $(document).ready(function() {
 	/* Função para REMOVER uma nova linha no detalhe do form*/
 
 
+
 	COLDIGO.compra.removeCampo = function(botao) {
 		//se houver mais de uma no MD
 		if ($("tr.detalhes").length > 1) {

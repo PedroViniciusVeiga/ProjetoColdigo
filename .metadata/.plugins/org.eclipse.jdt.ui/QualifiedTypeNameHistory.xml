@@ -7,12 +7,13 @@
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.google.gson.Gson"/>
-    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.modelo.ProdutoCompra"/>
     <fullyQualifiedTypeName name="br.com.coldigogeladeiras.bd.Conexao"/>
     <fullyQualifiedTypeName name="br.com.coldigogeladeiras.jdbcinterface.CompraDAO"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="br.com.coldigogeladeiras.modelo.Compra"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.modelo.ProdutoCompra"/>
+    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.jdbc.JDBCCompraDAO"/>
 </qualifiedTypeNameHistroy>

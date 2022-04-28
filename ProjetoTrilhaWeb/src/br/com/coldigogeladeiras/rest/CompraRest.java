@@ -10,6 +10,7 @@ import javax.ws.rs.core.Response;
 import com.google.gson.Gson;
 
 import br.com.coldigogeladeiras.bd.Conexao;
+import br.com.coldigogeladeiras.jdbc.JDBCCompraDAO;
 import br.com.coldigogeladeiras.modelo.Compra;
 import br.com.coldigogeladeiras.modelo.ProdutoCompra;
 
@@ -28,6 +29,16 @@ public class CompraRest extends UtilRest{
 			Conexao conec = new Conexao();
 			Connection conexao = conec.abrirConexao();
 			
+			JDBCCompraDAO jdbcCompra= new JDBCCompraDAO(conexao);
+			boolean retorno = jdbcCompra.inserir(compra);
+			String msg = "Erro ao cadastrar compra. ";
+			if(retorno) {
+				msg = "Compra cadastrada com sucesso!";
+			}
+			
+			conec.fecharConexao();
+			
+			return this.buildResponse(msg);
 			
 			
 		}catch(Exception e) {
