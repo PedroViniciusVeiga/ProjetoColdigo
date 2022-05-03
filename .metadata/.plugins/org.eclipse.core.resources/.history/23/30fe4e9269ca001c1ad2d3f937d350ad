@@ -1,0 +1,25 @@
+COLDIGO.relatorioCompra = new Object();
+
+$(document).ready(function(){
+	
+	//busca no db e exibe a página os produtos que atendam a solicitação do user
+	COLDIGO.relatorioCompra.buscar = function(){
+		$.ajax({
+			type: "GET",
+			url: COLDIGO.PATH + "compra/relatorio",
+			success: function(dados){
+				
+				
+				
+			},
+			error: function(info){
+				COLDIGO.exibirAviso("Erro ao consultar as compras: "+info.status + " - " + info.statusText);
+			}
+			
+		});
+	};
+	
+	//Executa a função carregar a página
+	COLDIGO.relatorioCompra.buscar();
+	
+});

@@ -4,6 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import br.com.coldigogeladeiras.jdbcinterface.CompraDAO;
 import br.com.coldigogeladeiras.modelo.Compra;
@@ -43,4 +49,38 @@ public class JDBCCompraDAO implements CompraDAO {
 		}
 		return true;
 	}
+	
+public List<JsonObject> gerarRelatorio(){
+		
+		String comando = "select * from compras order by data DESC";
+		List<JsonObject> listaCompras = new ArrayList<JsonObject>();
+		JsonObject compra = null;
+		
+		try {
+			
+			Statement stmt = conexao.createStatement();
+			ResultSet rs = stmt.executeQuery(comando);
+			while (rs.next()){
+				
+				int idCompra = rs.getInt("id");
+				String data = rs.getString("data");
+				String fornecedor = rs.getString("fornecedor");
+				
+				JDBCProdutoCompraDAO jdbcProdutoCompra = new JDBCProdutoCompraDAO (this.conexao);
+				List<JsonObject> listaProdutos = jdbcProdutoCompra.buscaPorCompra(idCompra);
+				
+				compra = new JsonObject();
+				compra.addProperty("id", idCompra);
+				compra.addProperty("data", data);
+				compra.addProperty("fornecedor", fornecedor);
+				compra.addProperty("produtos", new Gson().toJson(listaProdutos));
+				
+				listaCompras.add(compra);
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+					return listaCompras;
+		}
 }

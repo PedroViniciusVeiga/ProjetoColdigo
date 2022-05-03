@@ -1,13 +1,19 @@
 package br.com.coldigogeladeiras.rest;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import br.com.coldigogeladeiras.bd.Conexao;
 import br.com.coldigogeladeiras.jdbc.JDBCCompraDAO;
@@ -47,4 +53,34 @@ public class CompraRest extends UtilRest{
 		}
 	}
 	
-}
+	
+	@GET
+	@Path("/relatorio")
+	@Consumes("application/*")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response gerarRelatorio() {
+		
+		try {
+			List<JsonObject> listaCompras = new ArrayList<JsonObject>();
+			
+			Conexao conec = new Conexao();
+			Connection conexao = conec.abrirConexao();
+			JDBCCompraDAO jdbcCompra = new JDBCCompraDAO(conexao);
+			listaCompras = jdbcCompra.gerarRelatorio();
+			conec.fecharConexao();
+			String json = new Gson().toJson(listaCompras);
+			System.out.println(listaCompras);
+			return this.buildResponse(json);
+		}catch(Exception e) {
+			e.printStackTrace();
+			return this.buildErrorResponse(e.getMessage());
+			
+					
+			
+			
+			
+			
+		}
+	}
+	
+}//end

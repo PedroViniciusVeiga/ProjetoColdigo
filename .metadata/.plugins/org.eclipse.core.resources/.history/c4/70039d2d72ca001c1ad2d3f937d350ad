@@ -1,0 +1,46 @@
+COLDIGO.relatorioCompra = new Object();
+
+$(document).ready(function(){
+	
+	//busca no db e exibe a página os produtos que atendam a solicitação do user
+	COLDIGO.relatorioCompra.buscar = function(){
+		$.ajax({
+			type: "GET",
+			url: COLDIGO.PATH + "compra/relatorio",
+			success: function(dados){
+				
+				dados = JSON.parse(dados);
+				$("#listaCompras").html(COLDIGO.relatorioCompra.exibir(dados));
+				
+				
+			},
+			error: function(info){
+				COLDIGO.exibirAviso("Erro ao consultar as compras: "+info.status + " - " + info.statusText);
+			}
+			
+		});
+	};
+	
+	//Executa a função carregar a página
+	COLDIGO.relatorioCompra.buscar();
+	
+	//Transforma os dados dos produtos recebidos do servidor em table html
+	COLDIGO.relatorioCompra.exibir = function(listaDeCompras){
+		
+		//Criar uma variável pra receber o html das vendas
+		var vendas = "";
+		
+		if(listaDeCompras!= undefined && listaDeCompras.length > 0){
+			for(var i=0; i<listaDeCompras.length; i++){
+				
+				vendas += "<table" + 
+				"<tr>" + "<th colspan='5'"
+			}
+		}
+	}
+	
+	
+	
+	
+	
+});

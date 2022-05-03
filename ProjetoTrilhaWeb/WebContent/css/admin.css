@@ -295,9 +295,16 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+/********************************
+		Relatórios Nvo M1
+*********************************/
+#listaCompras table{
+	margin-bottom: 10px;
+}
 
-
-
+#listaCompras table th{
+	width: 20%;
+}
 
 
 
